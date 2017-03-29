@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="orange-web:war">
+    <output-path>$PROJECT_DIR$/orange-web/target</output-path>
+    <root id="archive" name="orange-web.war">
+      <element id="artifact" artifact-name="orange-web:war exploded" />
+    </root>
+  </artifact>
+</component>
