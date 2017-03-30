@@ -1,4 +1,4 @@
-package orange;
+package com.orange;
 
 /**
  * Hello world!

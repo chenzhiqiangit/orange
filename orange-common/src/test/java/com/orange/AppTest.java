@@ -1,4 +1,4 @@
-package orange;
+package com.orange;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
