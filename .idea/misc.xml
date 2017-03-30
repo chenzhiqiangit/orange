@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/orange-service/pom.xml" />
         <option value="$PROJECT_DIR$/orange-serviceImpl/pom.xml" />
         <option value="$PROJECT_DIR$/orange-web/pom.xml" />
+        <option value="$PROJECT_DIR$/orange-entity/pom.xml" />
       </list>
     </option>
   </component>
