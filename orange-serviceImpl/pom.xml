@@ -16,6 +16,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>orange</groupId>
+            <artifactId>orange-service</artifactId>
+            <version>${orange.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.0</version>
