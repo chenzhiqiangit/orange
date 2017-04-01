@@ -18,8 +18,7 @@
 	<!-- default-servlet-handler 配置2选1
 	<mvc:resources location="/static/" mapping="/static/**" />
 	 -->
-	 
-	<!-- 注解映射的支持 -->  
+	<!-- 注解映射的支持(启用注解) -->
 	<mvc:annotation-driven >
 		<!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射-->
 	   <mvc:message-converters>
@@ -61,7 +60,8 @@
 	<!-- 扫描控制器类 -->
 	<context:component-scan base-package="com.orange.web" >
 		<!--只扫描  @Controller 注释 -->
-		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>   
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
 	
 </beans>

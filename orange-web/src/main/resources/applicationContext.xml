@@ -7,8 +7,11 @@
        http://www.springframework.org/schema/context
 	   http://www.springframework.org/schema/context/spring-context-4.3.xsd">
     <!-- 扫描控制器类 -->
+
     <context:component-scan base-package="com.orange" >
         <!--不扫描  @Controller 注释 -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
+
 </beans>

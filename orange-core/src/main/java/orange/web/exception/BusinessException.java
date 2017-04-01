@@ -1,9 +1,9 @@
-package orange.exception;
+package orange.web.exception;
 
 /**
  * Created by chzq on 2017/4/1.
  */
-public class BusinessException  extends Exception{
+public class BusinessException  extends RuntimeException{
 
     private static final long serialVersionUID = 1L;
 
