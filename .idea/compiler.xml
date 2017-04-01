@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="orange-common" />
+        <module name="orange-core" />
         <module name="orange-entity" />
         <module name="orange-service" />
         <module name="orange-serviceImpl" />
@@ -16,6 +17,8 @@
     <bytecodeTargetLevel>
       <module name="orange-aggregator" target="1.5" />
       <module name="orange-common" target="1.5" />
+      <module name="orange-core" target="1.5" />
+      <module name="orange-core (1)" target="1.5" />
       <module name="orange-entity" target="1.5" />
       <module name="orange-service" target="1.5" />
       <module name="orange-serviceImpl" target="1.5" />

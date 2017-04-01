@@ -12,6 +12,8 @@
       <module>orange-service</module>
       <module>orange-serviceImpl</module>
       <module>orange-web</module>
+      <module>orange-entity</module>
+      <module>orange-core</module>
   </modules>
 
   <name>orange-aggregator</name>
@@ -39,9 +41,16 @@
     </dependency>
 
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.16</version>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
   </dependencies>
 </project>

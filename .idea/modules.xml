@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/orange-aggregator.iml" filepath="$PROJECT_DIR$/orange-aggregator.iml" />
       <module fileurl="file://$PROJECT_DIR$/orange-common/orange-common.iml" filepath="$PROJECT_DIR$/orange-common/orange-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orange-core/orange-core.iml" filepath="$PROJECT_DIR$/orange-core/orange-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/orange-entity/orange-entity.iml" filepath="$PROJECT_DIR$/orange-entity/orange-entity.iml" />
       <module fileurl="file://$PROJECT_DIR$/orange-service/orange-service.iml" filepath="$PROJECT_DIR$/orange-service/orange-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/orange-serviceImpl/orange-serviceImpl.iml" filepath="$PROJECT_DIR$/orange-serviceImpl/orange-serviceImpl.iml" />
