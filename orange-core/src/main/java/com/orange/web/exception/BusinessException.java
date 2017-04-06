@@ -1,4 +1,4 @@
-package orange.web.exception;
+package com.orange.web.exception;
 
 /**
  * Created by chzq on 2017/4/1.

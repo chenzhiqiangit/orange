@@ -19,7 +19,6 @@ public class WebInterceptor implements HandlerInterceptor {
 
     public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, ModelAndView arg3)
             throws Exception {
-        System.out.println("进来了.....................");
     }
 
     public boolean preHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2) throws Exception {

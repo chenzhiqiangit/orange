@@ -1,7 +1,7 @@
 package com.orange.web;
 
 import com.orange.service.user.UserService;
-import orange.web.exception.BusinessException;
+import com.orange.web.exception.BusinessException;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
