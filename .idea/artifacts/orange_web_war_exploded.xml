@@ -13,6 +13,12 @@
           <element id="archive" name="orange-serviceImpl-1.0-SNAPSHOT.jar">
             <element id="module-output" name="orange-serviceImpl" />
           </element>
+          <element id="archive" name="orange-entity-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="orange-entity" />
+          </element>
+          <element id="archive" name="orange-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="orange-dao" />
+          </element>
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.0" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:1.3.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.0.RELEASE" />

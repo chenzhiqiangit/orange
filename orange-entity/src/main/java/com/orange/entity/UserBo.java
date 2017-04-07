@@ -1,4 +1,4 @@
-package com.entity;
+package com.orange.entity;
 
 import com.orange.base.BaseBo;
 

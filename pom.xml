@@ -14,6 +14,7 @@
       <module>orange-web</module>
       <module>orange-entity</module>
       <module>orange-core</module>
+      <module>orange-dao</module>
   </modules>
 
   <name>orange-aggregator</name>

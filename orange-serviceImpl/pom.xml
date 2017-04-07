@@ -20,6 +20,25 @@
             <artifactId>orange-service</artifactId>
             <version>${orange.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>orange</groupId>
+            <artifactId>orange-entity</artifactId>
+            <version>${orange.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>orange</groupId>
+            <artifactId>orange-dao</artifactId>
+            <version>${orange.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>orange</groupId>
+            <artifactId>orange-common</artifactId>
+            <version>${orange.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>

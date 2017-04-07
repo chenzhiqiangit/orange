@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="orange-common" />
         <module name="orange-core" />
+        <module name="orange-dao" />
         <module name="orange-entity" />
         <module name="orange-service" />
         <module name="orange-serviceImpl" />
@@ -19,6 +20,7 @@
       <module name="orange-common" target="1.5" />
       <module name="orange-core" target="1.5" />
       <module name="orange-core (1)" target="1.5" />
+      <module name="orange-dao" target="1.5" />
       <module name="orange-entity" target="1.5" />
       <module name="orange-service" target="1.5" />
       <module name="orange-serviceImpl" target="1.5" />
