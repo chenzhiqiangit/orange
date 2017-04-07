@@ -1,10 +1,13 @@
 package com.orange.serviceImpl.user;
 
 import com.orange.dao.user.UserDao;
+import com.orange.entity.UserBo;
 import com.orange.service.user.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by chzq on 2017/3/30.
@@ -22,4 +25,9 @@ public class UserServiceImpl implements UserService {
         logger.debug("登录验证.......................................");
         return false;
     }
+
+    public List<UserBo> selectUsers(String accountId) {
+        return null;
+    }
+
 }
