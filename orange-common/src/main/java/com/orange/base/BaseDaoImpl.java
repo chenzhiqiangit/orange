@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * Created by chzq on 2017/4/7.
  */
-public class BaseDaoImpl<T extends BaseBo> implements BaseDao<T> {
+public class  BaseDaoImpl<T extends BaseBo> implements BaseDao<T> {
 
 
     public String SQL_SELECT_COUNT = "selectCount";
