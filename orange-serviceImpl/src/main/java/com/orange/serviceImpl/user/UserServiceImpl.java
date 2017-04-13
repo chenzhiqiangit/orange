@@ -27,7 +27,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<UserBo> selectUsers(String accountId) {
-        return null;
+        return userDao.findUserAll();
+    }
+
+    public UserBo selectUserById(String userId) {
+        return userDao.findUserById(userId);
     }
 
 }

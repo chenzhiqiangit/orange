@@ -1,5 +1,7 @@
 package com.orange.web;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.orange.entity.UserBo;
 import com.orange.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/userList")
-    @ResponseBody
-    public void findUserByAccoundId(@RequestParam(value = "accountId") String accountId){
+    @RequestMapping("/findUserList")
+    public ModelAndView findUserByAccoundId(@RequestParam(value = "accountId") String accountId){
         List<UserBo> list = userService.selectUsers(accountId);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("userList",list);
+        return modelAndView;
+    }
+
+    @RequestMapping("/userList")
+    public ModelAndView userList(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("attr","你好");
+        return modelAndView;
     }
 }

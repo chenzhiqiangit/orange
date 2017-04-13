@@ -37,6 +37,7 @@ public class  BaseDaoImpl<T extends BaseBo> implements BaseDao<T> {
 
     public String SQL_SELECT_All = "selectAll";
 
+    @Autowired
     protected SqlSession sqlSessionTemplate;
 
     public void setSqlSessionTemplate(SqlSession sqlSessionTemplate) {

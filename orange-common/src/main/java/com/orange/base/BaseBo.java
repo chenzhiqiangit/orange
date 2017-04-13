@@ -10,15 +10,19 @@ public class BaseBo implements Serializable{
 
     protected String createdBy;
 
-    protected Date creationTime;
+    protected Date createTime;
 
-    protected String creationMethod;
+    protected String createMethod;
 
-    protected String updatedBy;
+    protected String updateBy;
 
     protected Date updateTime;
 
     protected String updateMethod;
+
+    protected Integer deleteFlag;
+
+    private static final long SerialVersionUID = 1L;
 
     public String getCreatedBy() {
         return createdBy;
@@ -28,28 +32,28 @@ public class BaseBo implements Serializable{
         this.createdBy = createdBy;
     }
 
-    public Date getCreationTime() {
-        return creationTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreationTime(Date creationTime) {
-        this.creationTime = creationTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getCreationMethod() {
-        return creationMethod;
+    public String getCreateMethod() {
+        return createMethod;
     }
 
-    public void setCreationMethod(String creationMethod) {
-        this.creationMethod = creationMethod;
+    public void setCreateMethod(String createMethod) {
+        this.createMethod = createMethod;
     }
 
-    public String getUpdatedBy() {
-        return updatedBy;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
     }
 
     public Date getUpdateTime() {
@@ -66,5 +70,13 @@ public class BaseBo implements Serializable{
 
     public void setUpdateMethod(String updateMethod) {
         this.updateMethod = updateMethod;
+    }
+
+    public Integer getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(Integer deleteFlag) {
+        this.deleteFlag = deleteFlag;
     }
 }

@@ -8,7 +8,9 @@
         <setting name="lazyLoadingEnabled" value="true" />  
         <setting name="multipleResultSetsEnabled" value="true" />  
         <setting name="useColumnLabel" value="true" />  
-        <setting name="defaultExecutorType" value="REUSE" />  
-        <setting name="defaultStatementTimeout" value="25000" />  
-    </settings>  
+        <setting name="defaultExecutorType" value="REUSE" />
+        <setting name="defaultStatementTimeout" value="25000" />
+        <!-- mapUnderscoreToCamelCase 下划线映射 -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
 </configuration>

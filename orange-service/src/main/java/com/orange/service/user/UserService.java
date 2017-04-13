@@ -22,4 +22,6 @@ public interface UserService {
      * @return 查询账户的用户
      */
     List<UserBo> selectUsers(String accountId);
+
+    UserBo selectUserById(String userId);
 }

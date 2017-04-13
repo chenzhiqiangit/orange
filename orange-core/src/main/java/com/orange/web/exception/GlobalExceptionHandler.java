@@ -20,7 +20,7 @@ public class GlobalExceptionHandler extends BaseController {
     @ExceptionHandler(Exception.class)
     public void handleException(HttpServletRequest request, Exception ex)
     {
-        logger.error("exception handler" + ex.getMessage() );
+        ex.printStackTrace();
     }
 
     @ExceptionHandler(BusinessException.class)
