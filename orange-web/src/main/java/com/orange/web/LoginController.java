@@ -1,8 +1,11 @@
 package com.orange.web;
 
 import com.orange.service.user.UserService;
-import com.orange.web.exception.BusinessException;
+import com.orange.core.web.exception.BusinessException;
 import org.apache.log4j.Logger;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,14 +25,17 @@ public class LoginController {
     @RequestMapping("/login")
     public String login(@RequestParam(value = "userName") String userName,
                       @RequestParam(value ="pwd") String pwd){
-        boolean loginFlag = userService.login(userName,pwd);
-        logger.debug("登录111。。。。。。。。。。。。。。。。");
-        throw new BusinessException("测试异常");
+        UsernamePasswordToken token = new UsernamePasswordToken(userName, pwd);
+        //获取当前的Subject
+        Subject subject = SecurityUtils.getSubject();
+        subject.login(token);
+        if(subject.isAuthenticated()){
+            System.out.println("用户[" + userName + "]登录认证通过(这里可以进行一些认证通过后的一些系统参数初始化操作)");
+        }else{
+            token.clear();
+        }
+        return "index";
+        //throw new BusinessException("测试异常");
     }
 
-    @RequestMapping("/userLogin")
-    public String userLogin(){
-        logger.debug("登录页面111。。。。。。。。。。。。。。。。");
-        return "login";
-    }
 }

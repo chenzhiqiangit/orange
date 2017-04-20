@@ -1,4 +1,4 @@
-package com.orange.base;
+package com.orange.common.base;
 
 import org.apache.log4j.Logger;
 

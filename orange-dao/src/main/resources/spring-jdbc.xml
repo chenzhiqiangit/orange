@@ -80,7 +80,7 @@
     </bean>
 
     <!--mysql　第二种方式  -->
-    <bean id="baseDao" class="com.orange.base.BaseDaoImpl">
+    <bean id="baseDao" class="com.orange.common.base.BaseDaoImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
     </bean>
 

@@ -5,7 +5,7 @@
        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
     <!-- 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java -->
-    <bean id="myRealm" class="com.orange.shiro.MyrRealm"/>
+    <bean id="myRealm" class="com.orange.core.shiro.MyrRealm"/>
 
     <!-- Shiro默认会使用Servlet容器的Session,可通过sessionMode属性来指定使用Shiro原生Session -->
     <!-- 即<property name="sessionMode" value="native"/>,详细说明见官方文档 -->
@@ -33,9 +33,8 @@
         <!-- authc：该过滤器下的页面必须验证后才能访问,它是Shiro内置的一个拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter -->
         <property name="filterChainDefinitions">
             <value>
-                /login=anon
-                /index = anon
                 /static/**=anon
+                /login=anon
             </value>
         </property>
     </bean>

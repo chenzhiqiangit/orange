@@ -1,7 +1,6 @@
-package com.orange.base;
+package com.orange.common.base;
 
-import com.orange.utils.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.orange.common.utils.BeanUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;

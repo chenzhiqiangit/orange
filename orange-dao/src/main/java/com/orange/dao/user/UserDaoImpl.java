@@ -1,6 +1,6 @@
 package com.orange.dao.user;
 
-import com.orange.base.BaseDaoImpl;
+import com.orange.common.base.BaseDaoImpl;
 import com.orange.entity.UserBo;
 import org.springframework.stereotype.Repository;
 
@@ -19,5 +19,9 @@ public class UserDaoImpl extends BaseDaoImpl<UserBo> implements UserDao {
 
     public UserBo findUserById(String userId) {
         return selectById(userId);
+    }
+
+    public UserBo findUserByName(String name) {
+        return  sqlSessionTemplate.selectOne(getSqlName("selectByName"), name);
     }
 }

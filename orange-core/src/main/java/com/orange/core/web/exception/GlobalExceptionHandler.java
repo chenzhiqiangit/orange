@@ -1,7 +1,7 @@
-package com.orange.web.exception;
+package com.orange.core.web.exception;
 
 
-import com.orange.base.BaseController;
+import com.orange.common.base.BaseController;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 

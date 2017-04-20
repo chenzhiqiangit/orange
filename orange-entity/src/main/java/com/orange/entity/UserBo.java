@@ -1,6 +1,7 @@
 package com.orange.entity;
 
-import com.orange.base.BaseBo;
+
+import com.orange.common.base.BaseBo;
 
 /**
  * Created by chzq on 2017/3/30.

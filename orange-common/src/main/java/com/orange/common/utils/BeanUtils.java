@@ -1,4 +1,4 @@
-package com.orange.utils;
+package com.orange.common.utils;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

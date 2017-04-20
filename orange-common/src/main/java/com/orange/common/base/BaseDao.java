@@ -1,10 +1,10 @@
-package com.orange.base;
-
-import java.util.List;
-import java.util.Map;
+package com.orange.common.base;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by chzq on 2017/4/7.
@@ -133,17 +133,17 @@ public interface BaseDao<T extends BaseBo> {
      * 根据id，批量删除记录，如果传入的列表为null或为空列表则直接返回
      * @param idList 批量删除ID列表
      */
-    void deleteByIdInBatch(List<String> idList);
+    void deleteByIdInBatch(List <String> idList);
 
     /**
      * 批量插入，如果为空列表则直接返回
      * @param entityList 需要批量插入的实体对象列表
      */
-    void insertInBatch(List<T> entityList);
+    void insertInBatch(List <T> entityList);
 
     /**
      * 批量更新，该方法根据实体ID更新已设置的字段，未设置的字段不更新
      * @param entityList 批量更新的实体对象列表
      */
-    void updateInBatch(List<T> entityList);
+    void updateInBatch(List <T> entityList);
 }

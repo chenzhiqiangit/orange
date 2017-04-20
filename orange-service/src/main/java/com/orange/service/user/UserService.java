@@ -24,4 +24,6 @@ public interface UserService {
     List<UserBo> selectUsers(String accountId);
 
     UserBo selectUserById(String userId);
+
+    UserBo selectUserByName(String userName);
 }

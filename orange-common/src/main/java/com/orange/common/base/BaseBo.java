@@ -1,4 +1,4 @@
-package com.orange.base;
+package com.orange.common.base;
 
 import java.io.Serializable;
 import java.util.Date;
