@@ -32,7 +32,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @RequestMapping("/userList")
+        @RequestMapping("/userList")
     public ModelAndView userList(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("attr","你好");

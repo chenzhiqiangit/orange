@@ -42,9 +42,10 @@ public class MyrRealm  extends AuthorizingRealm {
      *  本例中该方法的调用时机为LoginController.login()方法中执行Subject.login()时
      */
     @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        String username = (String)token.getPrincipal();
-        UserBo user = userService.selectUserByName(username);
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
+        UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
+        String password = String.valueOf(token.getPassword());
+        UserBo user = userService.selectUserByPwd(token.getUsername(),password);
         if(user == null) {
             throw new AccountException("帐号或密码不正确！");
         }

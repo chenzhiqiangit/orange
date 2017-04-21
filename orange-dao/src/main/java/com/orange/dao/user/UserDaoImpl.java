@@ -4,7 +4,9 @@ import com.orange.common.base.BaseDaoImpl;
 import com.orange.entity.UserBo;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by chzq on 2017/4/7.
@@ -23,5 +25,12 @@ public class UserDaoImpl extends BaseDaoImpl<UserBo> implements UserDao {
 
     public UserBo findUserByName(String name) {
         return  sqlSessionTemplate.selectOne(getSqlName("selectByName"), name);
+    }
+
+    public UserBo selectUserByPwd(String userName, String pwd) {
+        Map<String, Object> params  = new HashMap<String,Object>();
+        params.put("userName",userName);
+        params.put("pwd",pwd);
+        return  sqlSessionTemplate.selectOne(getSqlName("userLogin"), params);
     }
 }

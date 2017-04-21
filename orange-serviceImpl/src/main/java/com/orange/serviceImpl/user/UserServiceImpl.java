@@ -26,6 +26,10 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    public UserBo selectUserByPwd(String userName,String pwd){
+        return userDao.selectUserByPwd(userName,pwd);
+    }
+
     public List<UserBo> selectUsers(String accountId) {
         return userDao.findUserAll();
     }

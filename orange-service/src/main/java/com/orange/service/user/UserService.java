@@ -26,4 +26,7 @@ public interface UserService {
     UserBo selectUserById(String userId);
 
     UserBo selectUserByName(String userName);
+
+
+    UserBo selectUserByPwd(String userName,String pwd);
 }

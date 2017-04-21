@@ -13,4 +13,6 @@ public interface UserDao extends BaseDao<UserBo> {
     UserBo findUserById(String userId);
 
     UserBo findUserByName(String name);
+
+    UserBo selectUserByPwd(String userName,String pwd);
 }
