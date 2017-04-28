@@ -22,11 +22,20 @@
             <groupId>orange</groupId>
             <artifactId>orange-common</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>orange</groupId>
             <artifactId>orange-service</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>orange</groupId>
+            <artifactId>orange-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -48,28 +57,30 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
             <version>1.3.2</version>
-            <scope>provided</scope>
         </dependency>
         <!-- 添加shiro web支持 -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-web</artifactId>
             <version>1.3.2</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-ehcache</artifactId>
             <version>1.3.2</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring</artifactId>
             <version>1.3.2</version>
-            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.16</version>
         </dependency>
 
     </dependencies>

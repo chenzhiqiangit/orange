@@ -13,10 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-/**
- * Created by chzq on 2017/4/7.
- */
-
 @RequestMapping("/user")
 @Controller
 public class UserController {

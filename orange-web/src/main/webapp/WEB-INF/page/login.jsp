@@ -17,7 +17,7 @@
     <title>你好</title>
 </head>
 <body>
-    <form action="login" method="post">
+    <form action="doLogin" method="post">
         <input name="userName" type="text"/></br>
         <input name="pwd" type="text" /> </br>
         <button type="submit">提交</button>

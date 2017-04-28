@@ -2,15 +2,11 @@ package com.orange.core.shiro;
 
 import com.orange.entity.UserBo;
 import com.orange.service.user.UserService;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
-import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.subject.Subject;
-import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -30,9 +26,8 @@ public class MyrRealm  extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals){
         // 通过url判断用户权限 暂不需要用到角色和权限
-        String username = (String)principals.getPrimaryPrincipal();
+        UserBo user = (UserBo)principals.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-       /// authorizationInfo.setRoles(userService.findRoles(username));
        // authorizationInfo.setStringPermissions(userService.findPermissions(username));
         return authorizationInfo;
     }
@@ -51,7 +46,7 @@ public class MyrRealm  extends AuthorizingRealm {
         }
 
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                user.getUserName(),//用户名
+                user,//用户名
                 user.getPassWord(), //密码
                 getName()  //realm name
         );

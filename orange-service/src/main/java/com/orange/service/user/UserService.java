@@ -1,5 +1,6 @@
 package com.orange.service.user;
 
+import com.orange.entity.Permission;
 import com.orange.entity.UserBo;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public interface UserService {
 
     UserBo selectUserByName(String userName);
 
-
     UserBo selectUserByPwd(String userName,String pwd);
+
+    List<Permission> selectPermissionsByUser(String userId,String accountId);
 }

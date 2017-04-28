@@ -22,9 +22,9 @@ public class LoginController {
     private UserService userService;
     private static final Logger logger = Logger.getLogger(LoginController.class);
 
-    @RequestMapping("/login")
-    public String login(@RequestParam(value = "userName") String userName,
-                      @RequestParam(value ="pwd") String pwd){
+    @RequestMapping("/doLogin")
+    public String doLogin(@RequestParam(value = "userName") String userName,
+                        @RequestParam(value ="pwd") String pwd){
         UsernamePasswordToken token = new UsernamePasswordToken(userName, pwd);
         //获取当前的Subject
         Subject subject = SecurityUtils.getSubject();
@@ -38,4 +38,13 @@ public class LoginController {
         //throw new BusinessException("测试异常");
     }
 
+    @RequestMapping("/login")
+    public void login(){
+
+    }
+
+    @RequestMapping("/index")
+    public void index(){
+
+    }
 }
