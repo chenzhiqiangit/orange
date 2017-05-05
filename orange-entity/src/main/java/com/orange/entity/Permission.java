@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Permission implements Serializable{
     private Long id;
-    private Long parentFunctionId;
+    private Long parentId;
     private String privilegeName;
     private String privilegeId;
     private String attachedActions;
@@ -22,12 +22,13 @@ public class Permission implements Serializable{
         this.id = id;
     }
 
-    public Long getParentFunctionId() {
-        return parentFunctionId;
+
+    public Long getParentId() {
+        return parentId;
     }
 
-    public void setParentFunctionId(Long parentFunctionId) {
-        this.parentFunctionId = parentFunctionId;
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 
     public String getPrivilegeName() {

@@ -34,6 +34,7 @@ public class LoginController {
         }else{
             token.clear();
         }
+        logger.info("登录中..........................");
         return "index";
         //throw new BusinessException("测试异常");
     }

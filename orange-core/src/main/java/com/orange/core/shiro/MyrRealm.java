@@ -9,6 +9,11 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by chzq on 2017/4/5.
  */
@@ -26,9 +31,15 @@ public class MyrRealm  extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals){
         // 通过url判断用户权限 暂不需要用到角色和权限
-        UserBo user = (UserBo)principals.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-       // authorizationInfo.setStringPermissions(userService.findPermissions(username));
+        try {
+            UserBo user = (UserBo) principals.getPrimaryPrincipal();
+            List <String> permissionList = userService.selectPermissionsByUserToStr(user.getUserId(), null);
+            Set <String> setPermission = new HashSet <String>(permissionList);
+            authorizationInfo.setStringPermissions(setPermission);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return authorizationInfo;
     }
 

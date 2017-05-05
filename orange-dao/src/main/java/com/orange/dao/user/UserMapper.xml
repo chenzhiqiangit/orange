@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.orange.entity.UserBo">
-	<select id="selectById" parameterType="java.lang.String" resultType="com.orange.entity.UserBo">
+<mapper namespace="com.orange.dao.user.UserMapper">
+
+	<select id="selectById"  resultType="com.orange.entity.UserBo">
 		select * from sys_user where user_id=#{userId}
 	</select>
 	
@@ -10,11 +11,11 @@
 	</select>
 
 
-	<select id="selectByName" parameterType="java.lang.String" resultType="com.orange.entity.UserBo">
+	<select id="selectByName"  resultType="com.orange.entity.UserBo">
 		select * from sys_user where user_name = #{userName};
 	</select>
 
-	<select id="userLogin" parameterType="java.lang.String" resultType="com.orange.entity.UserBo">
+	<select id="selectByUserPwd" parameterType="Map"  resultType="com.orange.entity.UserBo">
 		select * from sys_user where user_name = #{userName} and password=#{pwd};
 	</select>
 

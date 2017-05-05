@@ -30,5 +30,8 @@ public interface UserService {
 
     UserBo selectUserByPwd(String userName,String pwd);
 
-    List<Permission> selectPermissionsByUser(String userId,String accountId);
+    List<Permission> selectPermissionsByUser(Long userId,String accountId);
+
+    List<String> selectPermissionsByUserToStr(Long userId,String accountId);
+
 }

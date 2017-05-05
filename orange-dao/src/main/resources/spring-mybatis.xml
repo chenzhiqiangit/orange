@@ -12,18 +12,8 @@
 
     <context:property-placeholder location="classpath:database.properties" />
 
-    <!-- spring dataSource
-    <bean id="dataSource"
-        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName"
-            value="${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="username"
-            value="${jdbc.username}" />
-        <property name="password"
-            value="${jdbc.password}" />
-    </bean>
-    -->
+    <!-- 自动扫描 -->
+    <context:component-scan base-package="com.orange.dao" />
 
     <!-- 配置数据源，使用的是alibaba的Druid数据源 -->
     <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -67,22 +57,24 @@
 
 
     <!--
-     mysql　第一种方式
+    mybatis　第一种方式
     DAO接口所在包名，Spring会自动查找其下的类 ,包下的类需要使用@MapperScan注解,否则容器注入会失败,DAO接口不要实现IMPL在service直接用
+	 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="me.gacl.dao" />
+        <property name="basePackage" value="com.orange.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
-	 -->
 
+    <!--mybatis　第二种方式  -->
+    <!--
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
 
-    <!--mysql　第二种方式  -->
     <bean id="baseDao" class="com.orange.common.base.BaseDaoImpl">
         <property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
     </bean>
+    -->
 
     <!--  tx 事务
    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
