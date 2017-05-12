@@ -56,6 +56,16 @@
 		<property name="prefix" value="/WEB-INF/page/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
+	<!--定义异常处理页面-->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.RuntimeException">error/errorPage</prop>
+			</props>
+		</property>
+	</bean>
+
 	
 	<!-- 扫描控制器类 -->
 	<context:component-scan base-package="com.orange.web" >

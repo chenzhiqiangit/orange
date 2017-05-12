@@ -25,6 +25,7 @@ public class GlobalExceptionHandler extends BaseController {
 
     @ExceptionHandler(BusinessException.class)
     public void handleBizExp(HttpServletRequest request, Exception ex){
+        ex.printStackTrace();
         logger.error("BusinessException handler" + ex.getMessage() );
     }
 
@@ -34,6 +35,7 @@ public class GlobalExceptionHandler extends BaseController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("message", ex.getMessage());
         mv.setViewName("sql_error");
+        ex.printStackTrace();
         return mv;
     }
 }
