@@ -7,14 +7,37 @@
     <!-- 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java -->
     <bean id="myRealm" class="com.orange.core.shiro.MyrRealm"/>
 
+    <!-- shiro缓存管理 主要包括session缓存和权限缓存,session缓存可以用于集群session共享 -->
+    <bean id="shiroCacheManager" class="com.orange.core.shiro.cache.ShiroCacheManager"/>
+
     <!-- 权限过来，权限格式 /user/userList -->
-    <bean id="permissionFilter" class="com.orange.core.shiro.filter.PermissionFilter" />
+    <bean id="permissionFilter" class="com.orange.core.shiro.filter.PermissionControlFilter" />
+
+    <!-- 会话Session ID生成器 -->
+    <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
+
+    <!-- session 创建、删除、查询 -->
+
+    <bean id="shiroSessionDAO" class="com.orange.core.shiro.ShiroSessionDAO" />
+
+    <bean id="shiroSessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="sessionDAO" ref="shiroSessionDAO"/>
+        <!-- <property name="sessionValidationScheduler" ref="shiroSessionValidationScheduler"/> -->
+        <property name="sessionValidationInterval" value="1800000"/>  <!-- 相隔多久检查一次session的有效性 -->
+        <property name="globalSessionTimeout" value="1800000"/>  <!-- session 有效时间为半小时 （毫秒单位）-->
+        <!-- <property name="sessionListeners">
+            <list>
+                <bean class="com.concom.security.interfaces.listener.SessionListener"/>
+            </list>
+        </property> -->
+    </bean>
 
     <!-- Shiro默认会使用Servlet容器的Session,可通过sessionMode属性来指定使用Shiro原生Session -->
     <!-- 即<property name="sessionMode" value="native"/>,详细说明见官方文档 -->
     <!-- 这里主要是设置自定义的单Realm应用,若有多个Realm,可使用'realms'属性代替 -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
+        <property name="cacheManager" ref="shiroCacheManager" />
     </bean>
 
     <!-- Shiro主过滤器本身功能十分强大,其强大之处就在于它支持任何基于URL路径表达式的、自定义的过滤器的执行 -->

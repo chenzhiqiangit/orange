@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Created by chzq on 2017/5/5.
  */
-public class PermissionFilter  extends AccessControlFilter {
+public class PermissionControlFilter extends AccessControlFilter {
 
     private static final Logger logger = Logger.getLogger(ShiroFilterUtils.class);
 
