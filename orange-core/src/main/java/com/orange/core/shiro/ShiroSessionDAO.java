@@ -11,6 +11,7 @@ import java.util.Collection;
  * Created by chzq on 2017/5/17.
  */
 public class ShiroSessionDAO extends AbstractSessionDAO{
+
     protected Serializable doCreate(Session session) {
         return null;
     }
