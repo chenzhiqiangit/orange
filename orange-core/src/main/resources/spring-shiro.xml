@@ -31,8 +31,10 @@
         <!-- <property name="sessionValidationScheduler" ref="shiroSessionValidationScheduler"/> -->
         <property name="sessionValidationInterval" value="1800000"/>  <!-- 相隔多久检查一次session的有效性 -->
         <property name="globalSessionTimeout" value="1800000"/>  <!-- session 有效时间为半小时 （毫秒单位）-->
-        <!-- 会话Cookie模板 -->
+        <!-- 会话Cookie模板 没有需要 -->
+        <!--
         <property name="sessionIdCookie" ref="sessionIdCookie"/>
+        -->
         <!-- <property name="sessionListeners"> 监控方式
             <list>
                 <bean class="com.concom.security.interfaces.listener.SessionListener"/>
