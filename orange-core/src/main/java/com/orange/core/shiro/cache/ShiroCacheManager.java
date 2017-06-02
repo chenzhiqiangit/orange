@@ -11,4 +11,5 @@ public class ShiroCacheManager  extends AbstractCacheManager {
     protected Cache createCache(String s) throws CacheException {
         return null;
     }
+
 }
