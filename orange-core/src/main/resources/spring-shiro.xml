@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
+    <import resource="spring-redis.xml" />
     <!-- 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java -->
     <bean id="myRealm" class="com.orange.core.shiro.MyrRealm"/>
 
@@ -13,7 +14,15 @@
     <!-- 会话Session ID生成器 -->
     <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
 
-    <bean id="shiroSessionDAO" class="com.orange.core.shiro.ShiroSessionDAO" />
+    <!-- shiro 缓存 -->
+    <bean id="shiroCacheManager" class="com.orange.core.shiro.cache.ShiroCacheManager" >
+        <property name="jedisManager" ref="jedisManager" />
+    </bean>
+
+    <!-- shiro session缓存 session共享 解决session集群问题  -->
+    <bean id="shiroSessionDAO" class="com.orange.core.shiro.ShiroSessionDAO" >
+        <property name="jedisManager" ref="jedisManager" />
+    </bean>
 
     <!-- 会话Cookie模板 -->
     <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
@@ -31,6 +40,8 @@
         <!-- <property name="sessionValidationScheduler" ref="shiroSessionValidationScheduler"/> -->
         <property name="sessionValidationInterval" value="1800000"/>  <!-- 相隔多久检查一次session的有效性 -->
         <property name="globalSessionTimeout" value="1800000"/>  <!-- session 有效时间为半小时 （毫秒单位）-->
+        <!-- 是否在会话过期后会调用SessionDAO的delete方法删除会话 默认true -->
+        <property name="deleteInvalidSessions" value="true" />
         <!-- 会话Cookie模板 没有需要 -->
         <!--
         <property name="sessionIdCookie" ref="sessionIdCookie"/>
@@ -48,6 +59,7 @@
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
         <property name="sessionManager" ref="shiroSessionManager"/>
+        <property name="cacheManager" ref="shiroCacheManager" />
     </bean>
 
     <!-- Shiro主过滤器本身功能十分强大,其强大之处就在于它支持任何基于URL路径表达式的、自定义的过滤器的执行 -->
