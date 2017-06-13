@@ -17,18 +17,20 @@ public class TestRedis {
         JedisPool pool = (JedisPool)context.getBean("jedisPool");
         JedisManager jedis = new JedisManager();
         jedis.setJedisPool(pool);
-        String dd = "abc";
-        String cc = "你好";
+        //String dd = "abc";
+        //String cc = "你好";
         try {
-            jedis.saveValueByKey(1, dd.getBytes(), cc.getBytes("UTF-8"), 10000);
-            String v = new String(jedis.getValueByKey(1,dd.getBytes()),"UTF-8");
-            System.out.println(v);
-            jedis.saveValueByKey(1, "abced".getBytes(), "erer".getBytes("UTF-8"), 10000);
+            //jedis.saveValueByKey(1, dd.getBytes(), cc.getBytes("UTF-8"), 10000);
+           // String v = new String(jedis.getValueByKey(1,dd.getBytes()),"UTF-8");
+           // System.out.println(v);
+            //jedis.saveValueByKey(1, "abced".getBytes(), "erer".getBytes("UTF-8"), 10000);
 
-            Set<byte[]> set = jedis.keys(1,"ab*".getBytes());
+            Set<byte[]> set = jedis.keys(1,"*".getBytes());
             for(byte[] b : set){
                 String temp = new String(b,"UTF-8");
                 System.out.println(temp);
+                // String v = new String(jedis.getValueByKey(1,b),"UTF-8");
+                // System.out.println(v);
             }
         }catch(Exception e){
             e.printStackTrace();

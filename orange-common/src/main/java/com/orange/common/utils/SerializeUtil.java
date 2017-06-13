@@ -22,13 +22,14 @@ public class SerializeUtil {
             os.close();
             bos.close();
             rv = bos.toByteArray();
+            return rv;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             close(os);
             close(bos);
         }
-        return rv;
+        return null;
     }
 
 

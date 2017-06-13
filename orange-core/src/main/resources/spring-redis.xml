@@ -24,8 +24,4 @@
         <constructor-arg name="password" value="${redis.password}" />
     </bean>
 
-    <bean id="jedisManager" class="com.orange.core.cache.redis.JedisManager" >
-        <property name="jedisPool" ref="jedisPool" />
-    </bean>
-    
 </beans>
