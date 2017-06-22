@@ -7,13 +7,13 @@
        http://www.springframework.org/schema/context
 	   http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-    <context:property-placeholder location="classpath:redis.properties" />
+    <context:property-placeholder location="classpath:redis.properties" ignore-unresolvable="true" />
 
     <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxTotal" value="${redis.maxActive}" />
         <property name="maxIdle" value="${redis.maxIdle}" />
         <property name="maxWaitMillis" value="${redis.maxWaitMillis}" />
         <property name="testOnBorrow" value="true" />
+        <property name="maxTotal" value="${redis.maxActive}" />
     </bean>
 
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
@@ -24,4 +24,7 @@
         <constructor-arg name="password" value="${redis.password}" />
     </bean>
 
+    <bean id="jedisManager" class="com.orange.core.cache.redis.JedisManager" >
+        <property name="jedisPool" ref="jedisPool" />
+    </bean>
 </beans>

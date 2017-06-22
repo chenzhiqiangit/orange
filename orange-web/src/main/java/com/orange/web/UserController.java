@@ -28,10 +28,10 @@ public class UserController {
         return modelAndView;
     }
 
-        @RequestMapping("/userList")
+    @RequestMapping("/userList")
     public void userList(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("attr","你好");
-        throw new RuntimeException("错误了");
+        //throw new RuntimeException("错误了");
     }
 }

@@ -8,6 +8,14 @@
     <!-- 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java -->
     <bean id="myRealm" class="com.orange.core.shiro.MyrRealm"/>
 
+    <!-- 踢出用户 -->
+    <bean id="kickoutSessionFilter" class="com.orange.core.shiro.filter.KickoutSessionControlFilter" >
+        <property name="jedisManager" ref="jedisManager"></property>
+        <property name="maxSession" value="1" ></property>
+        <property name="sessionManager" ref="shiroSessionManager"></property>
+        <property name="kickoutUrl" value=""></property>
+    </bean>
+
     <!-- 权限过来，权限格式 /user/userList -->
     <bean id="permissionFilter" class="com.orange.core.shiro.filter.PermissionControlFilter" />
 
@@ -78,6 +86,7 @@
          <property name="filters">
              <map>
                  <entry key="permissionFilter" value-ref="permissionFilter"></entry>
+                 <entry key="kickoutSessionFilter" value-ref="kickoutSessionFilter"></entry>
              </map>
          </property>
 
@@ -92,7 +101,7 @@
                 /index=anon
                 /login=anon
                 /doLogin=anon
-                /**=authc,permissionFilter
+                /**=authc,permissionFilter,kickoutSessionFilter
             </value>
         </property>
     </bean>
