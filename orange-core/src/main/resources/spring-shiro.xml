@@ -101,7 +101,7 @@
                 /index=anon
                 /login=anon
                 /doLogin=anon
-                /**=authc,permissionFilter,kickoutSessionFilter
+                /**=authc,kickoutSessionFilter,permissionFilter
             </value>
         </property>
     </bean>
