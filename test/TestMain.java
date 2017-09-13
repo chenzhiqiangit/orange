@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.concurrent.*;
 
 /**
- * Created by chzq on 2017/6/1. nnnnn
+ * Created by chzq on 2017/6/1.
  */
 public class TestMain {
     public static void main(String[] args) throws Exception{
